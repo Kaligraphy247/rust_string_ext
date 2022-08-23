@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    // println!("Hello, world!");
+    let _this_be = "fun";
 }
