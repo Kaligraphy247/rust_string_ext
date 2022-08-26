@@ -4,11 +4,11 @@
 
 pub mod string_extention {
     //! mod string extention
-pub fn split_string(word: &str, at: &str) -> (String, String) {
+pub fn split_str(word: &str, at: &str) -> (String, String) {
     //! Split string function
     let word_length: usize = word.len();
 
-    match  word_length {
+    match word_length {
         0 => {
             let error_msg = ansi_term::Colour::Red.bold().paint("`word` cannot be empty");
             panic!("{}",error_msg);
@@ -42,9 +42,10 @@ pub fn capitalize(word: &str) -> String {
 // 3. 
 pub fn substring(word: &str, x:usize, y:usize) -> String{
     //! substring
-    let result: &str = &word[x..y+1];
-    return result.to_string();
-}
+    // let result: &str = &word[x..y+1];
+    let result: String = word.chars().skip(x).take(y-1).collect::<String>();
+    return result;
+    }
 }
 
 
