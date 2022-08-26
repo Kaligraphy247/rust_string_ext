@@ -32,9 +32,9 @@ pub fn split_string(word: &str, at: &str) -> (String, String) {
 // 2. 
 pub fn capitalize(word: &str) -> String {
     //! capitalize string
-    let m: &str = &word[0..1].to_uppercase();
-    let n: &str = &word[1..];
-    let o: String = m.to_owned() + n;
+    let m: String = word.chars().skip(0).take(1).collect::<String>();
+    let n: String = word.chars().skip(1).take(word.len()).collect::<String>();
+    let o: String = m.to_uppercase() + &n;
     return o
 }
 
